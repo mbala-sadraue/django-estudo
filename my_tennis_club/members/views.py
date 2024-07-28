@@ -26,6 +26,6 @@ def details(request, id):
 
     template = loader.get_template("details.html")
     member = Member.objects.get(id= id)
-    
+    # print(member)
     context = {"member":member}
     return HttpResponse(template.render(context, request))
