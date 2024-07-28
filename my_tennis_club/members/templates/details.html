@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> {{member.firstName}} {{ member.lastName}}</title>
-</head>
-
-<body>
+{% extends "master.html" %}
+{% block title %}
+{{ member.firstName }} {{ member.lastName }}
+{% endblock %}
+{% block content %}
    <h1> {{ member.firstName }} {{ member.lastName }}</h1>
    
    <ul>
     <li> {{member.phone }}</li>
     <li> {{member.joined_date }}</li>
    </ul>
-</body>
-</html>
+   {% endblock %}
