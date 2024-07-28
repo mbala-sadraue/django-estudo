@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import  HttpResponse
-from django.template import loader
+from django.template import loader,Context
+from members.models import Member
 # Create your views here.
 
 def home(request):
@@ -15,8 +16,10 @@ def home(request):
 
 def members(request):
 
+    template = loader.get_template("all_members.html")
     
 
-    template = loader.get_template("all_members.html")
-
-    return HttpResponse(template.render())
+    members_list = Member.objects.all().values()
+    context  = {"members":members_list}
+    # print(members_list)
+    return HttpResponse(template.render(context,request))

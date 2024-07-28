@@ -6,8 +6,12 @@
     <title>Todos membros</title>
 </head>
 <body>
-
     <h1>Lista de todos os membros</h1>
-    
+    <!-- {{ members }} -->
+    <ul>
+        {%  for member in members %}
+            <li> {{ member.firstName}}  {{ member.lastName}}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
