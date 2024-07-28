@@ -12,3 +12,11 @@ def home(request):
     # return  HttpResponse("Home members ")
     # return render(request, "home.html")
     return HttpResponse(template.render())
+
+def members(request):
+
+    
+
+    template = loader.get_template("all_members.html")
+
+    return HttpResponse(template.render())
