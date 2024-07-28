@@ -6,8 +6,6 @@ from members.models import Member
 
 def home(request):
 
-    
-
     template = loader.get_template("home.html")
     
     # return  HttpResponse("Home members ")
@@ -23,3 +21,11 @@ def members(request):
     context  = {"members":members_list}
     # print(members_list)
     return HttpResponse(template.render(context,request))
+
+def details(request, id):
+
+    template = loader.get_template("details.html")
+    member = Member.objects.get(id= id)
+    
+    context = {"member":member}
+    return HttpResponse(template.render(context, request))
