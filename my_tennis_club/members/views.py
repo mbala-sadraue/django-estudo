@@ -5,7 +5,6 @@ from members.models import Member
 # Create your views here.
 
 def home(request):
-
     template = loader.get_template("home.html")
     # return  HttpResponse("Home members ")
     # return render(request, "home.html")
