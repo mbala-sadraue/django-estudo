@@ -4,7 +4,6 @@
 {% endblock %}
 {% block content %}
 <h1>Lista de todos os membros</h1>
-    <!-- {{ members }} -->
     <ul>
         {%  for member in members %}
             <li><a href="/members/details/{{ member.id }}">{{ member.firstName}}  {{ member.lastName}}</a> </li>

@@ -16,7 +16,6 @@ def members(request):
 
     template = loader.get_template("all_members.html")
     
-
     members_list = Member.objects.all().values()
     context  = {"members":members_list}
     # print(members_list)
